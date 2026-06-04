@@ -1,0 +1,13 @@
+from openai import OpenAI
+
+client = OpenAI(
+    api_key="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"
+)
+
+def ask_ai(message):
+    response = client.responses.create(
+        model="gpt-5",
+        input=message
+    )
+
+    return response.output_text
